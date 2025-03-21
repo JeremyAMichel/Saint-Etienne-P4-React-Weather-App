@@ -1,12 +1,12 @@
-function WeatherInfo() {
+function WeatherInfo({ city, weatherOfActiveDay }) {
   return (
     <div className="card-content white-text">
-      <span className="card-title">Lyon</span>
+      <span className="card-title">{city}</span>
       <p>
-        <img src="icons/sun.svg" />
+        <img src={weatherOfActiveDay.icon} alt={weatherOfActiveDay.description} />
       </p>
-      <span className="temperature">15°</span>
-      <div className="wind">Vent 1km/h (360°)</div>
+      <span className="temperature">{weatherOfActiveDay.avgTemp}°</span>
+      <div className="wind">Vent {weatherOfActiveDay.windSpeed}km/h</div>
     </div>
   );
 }
